@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const app = express();
+const routes = require("./routes/index");
 
 if (process.env.NODE_ENV !== "production") {
     require("env2")("config.env");
@@ -10,7 +11,7 @@ if (process.env.NODE_ENV !== "production") {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//app.use(routes);
+app.use(routes);
 if (process.env.NODE_ENV === "production") {
     const buildPath = path.join(__dirname, "..", "/build/");
     app.use(express.static(buildPath));
