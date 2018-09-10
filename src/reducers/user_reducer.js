@@ -1,17 +1,17 @@
-import { AUTH_USER} from "../actions/types";
+import { AUTH_USER } from "../actions/types";
 
 const initialState = {
-   user: {}
-}
+  user: {}
+};
 
-export default function (state = initialState, action) {
-    switch (action.type) {
-        case AUTH_USER:
-            return {
-                ...state,
-                user: action.payload
-            };
-        default:
-            return state
-    }
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case AUTH_USER:
+      return {
+        ...state,
+        user: action.payload
+      };
+    default:
+      return state;
+  }
 }
