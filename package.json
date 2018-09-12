@@ -12,6 +12,7 @@
     "concurrently": "^4.0.1",
     "env2": "^2.2.2",
     "express": "^4.16.3",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "pg-promise": "^8.4.6",
     "react": "^16.5.0",
@@ -20,6 +21,7 @@
     "react-scripts": "1.1.5",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
+    "supertest": "^3.3.0",
     "tape": "^4.9.1"
   },
   "scripts": {
@@ -28,8 +30,7 @@
     "auto-server": "nodemon index.js",
     "dev": "concurrently \"npm run auto-server\" \"npm run client\" ",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "db-test": "NODE_ENV=test node server/db_queries/tests.js",
+    "test": "NODE_ENV=test jest --watch",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
