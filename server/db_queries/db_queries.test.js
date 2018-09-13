@@ -14,7 +14,6 @@ describe("Check user query", ()=>{
     const email = "k@alakal.com";
     checkUser(email)
       .then(queryRes => {
-        console.log(queryRes)
         expect(queryRes.case).toBeFalsy();
       });
   });
@@ -24,7 +23,8 @@ describe("Add user query", ()=>{
   const data = {
     email: "k@aq.com",
     password: "password123",
-    user_type: "organizer"
+    user_type: "organizer",
+    consent: true
   };
   test("Should return an array", () => {
     addUser(data)
@@ -46,6 +46,7 @@ describe("Add user query", ()=>{
     });
   });
 });
+
 describe("One user query", () => {
   test("Should return an object", () => {
     const email = "k@a.com";
@@ -55,10 +56,10 @@ describe("One user query", () => {
       });
   });
   test("Should return a email value thats the same as the email passed in", () => {
-    const email = "k@alakal.com";
-    checkUser(email)
+    const email = "k@a.com";
+    oneUser(email)
       .then(queryRes => {
-        expect(queryRes.id).toEqual(email);
+        expect(queryRes.email).toEqual(email);
       });
   });
 });
