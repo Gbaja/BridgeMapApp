@@ -1,6 +1,7 @@
 const checkUser = require("../db_queries/check_user");
 const { hashPassword } = require("../helpers/bcrypt");
 const addUser = require("../db_queries/add_user");
+const { successData, wrongInfoData } = require("../helpers/sending_data");
 
 exports.post = async (req, res) => {
   try {
@@ -14,9 +15,12 @@ exports.post = async (req, res) => {
         consent: req.body.consent
       };
       const userAddedData = await addUser(userData);
-      res.send(userAddedData);
-    } else{
-      res.status(422).send({type: "error", message: "An account has been created with this email. Please log in."});
+      delete userAddedData.password; 
+      return successData(res, userAddedData);
+    } else {
+      const message =
+        "An account has been created with this email. Please log in.";
+      return wrongInfoData(res, message);
     }
   } catch (error) {
     console.log(error);
