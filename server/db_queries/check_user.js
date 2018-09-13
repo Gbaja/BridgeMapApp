@@ -7,7 +7,7 @@ const checkUser = email =>
   ELSE CAST (false AS BOOLEAN) END`,
       [email]
     )
-    // .then(res => res[0])
+    .then(res => res[0])
     .catch(err => console.log("one user query err: ", err));
 
 module.exports = checkUser;

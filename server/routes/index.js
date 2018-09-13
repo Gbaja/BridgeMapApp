@@ -2,8 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/api/hello", (req, res)=>{
-    res.send("Hello")
-})
+const signup = require("./signup");
 
-module.exports = router
+router.get("/api/hello", (req, res)=>{
+  res.send("Hello");
+});
+
+router.post("/api/signup", signup.post);
+
+module.exports = router;

@@ -7,7 +7,7 @@ describe("Check user query", ()=>{
     const email = "k@a.com";
     checkUser(email)
       .then(queryRes=>{
-        expect(queryRes[0].case).toBeTruthy();
+        expect(queryRes.case).toBeTruthy();
       });
   });
   test("Should return false if email does not exist in database", () => {
@@ -15,7 +15,7 @@ describe("Check user query", ()=>{
     checkUser(email)
       .then(queryRes => {
         console.log(queryRes)
-        expect(queryRes[0].case).toBeFalsy();
+        expect(queryRes.case).toBeFalsy();
       });
   });
 });
