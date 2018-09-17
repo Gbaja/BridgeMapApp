@@ -1,7 +1,8 @@
 const request = require("supertest");
 
-
+const runDbBuild = require("../database/db_build");
 const app = require("../index");
+
 
 describe("Test the example route path", () => {
   test("It should return correct status code", done => {
@@ -15,14 +16,20 @@ describe("Test the example route path", () => {
 });
 
 describe("Test the sign up route", () => {
-  test("It should return 200 correct status code", async done => {
-    const requestInfo = 
-    request(app)
+
+  test("It should return 200 correct status code", done => {
+    return request(app)
       .post("/api/signup")
-      console.log(requestInfo.status)
-    //  .then(response => {
-        expect(requestInfo.statusCode).toBe(200);
+      .send({
+        email: "gbajaf@yahoo.co.uk",
+        password: "heyyy",
+        user_type: "oeie",
+        consent: true
+      })
+      .set('Accept', 'application/json')
+      .then(response => {
+        expect(response.statusCode).toBe(200);
         done();
-     // });
+      });
   });
 });

@@ -1,6 +1,7 @@
 const checkUser = require("./check_user");
 const addUser = require("./add_user");
 const oneUser = require("./one_user");
+const runDbBuild = require("../database/db_build");
 
 describe("Check user query", ()=>{
   test("Should return true if email exist in database", () =>{
@@ -21,7 +22,7 @@ describe("Check user query", ()=>{
 
 describe("Add user query", ()=>{
   const data = {
-    email: "k@aq.com",
+    email: "k@a.com",
     password: "password123",
     user_type: "organizer",
     consent: true
@@ -29,19 +30,16 @@ describe("Add user query", ()=>{
   test("Should return an array", () => {
     addUser(data)
       .then(queryRes => {
-        console.log(queryRes.length)
         expect(Array.isArray(queryRes)).toBeTruthy();
       });
   });
   test("Should return an array with length one", () => {
     addUser(data).then(queryRes => {
-      console.log(queryRes.length);
       expect(queryRes.length).toBe(1);
     });
   });
   test("Should return an array that contains an object with ID property", () => {
     addUser(data).then(queryRes => {
-      console.log(queryRes.length);
       expect(queryRes[0].hasOwnProperty("id")).toBeTruthy();
     });
   });
@@ -52,6 +50,7 @@ describe("One user query", () => {
     const email = "k@a.com";
     oneUser(email)
       .then(queryRes => {
+        console.log("QUERY RES: ", queryRes)
         expect(typeof queryRes).toEqual("object");
       });
   });

@@ -6,6 +6,7 @@ const { successData, wrongInfoData } = require("../helpers/sending_data");
 exports.post = async (req, res) => {
   try {
     const userExist = await checkUser(req.body.email);
+    console.log("USER EXITS: ", userExist);
     if (!userExist.case) {
       const hashUserPassword = await hashPassword(req.body.password);
       const userData = {
@@ -15,11 +16,13 @@ exports.post = async (req, res) => {
         consent: req.body.consent
       };
       const userAddedData = await addUser(userData);
+  
       delete userAddedData.password; 
       return successData(res, userAddedData);
     } else {
       const message =
         "An account has been created with this email. Please log in.";
+      
       return wrongInfoData(res, message);
     }
   } catch (error) {
