@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import LoginContainer from './Login/LoginContainer';
+import SignupContainer from './Signup/SignupContainer';
 
 class App extends Component {
 
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
        BridgeMap
        <LoginContainer />
+       <SignupContainer/>
       </div>
     );
   }
