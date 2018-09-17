@@ -16,6 +16,7 @@ describe("Test the example route path", () => {
 });
 
 describe("Test the sign up route", () => {
+  afterEach(()=> { return runDbBuild()});
 
   test("It should return 200 correct status code", done => {
     return request(app)
