@@ -3,7 +3,7 @@ import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import LoginForm from "./Login";
+import LoginForm from "./LoginForm";
 import { login } from "../../actions/auth_user";
 
 class LoginContainer extends Component {
