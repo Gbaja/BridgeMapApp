@@ -21,3 +21,22 @@ export const login = data => {
       });
   };
 };
+
+export const signup = data =>{
+  return dispatch => {
+    return axios
+      .post("/api/signup", data)
+      .then(res => {
+        dispatch({
+          type: AUTH_USER,
+          payload: res.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        if (err.response.status === 422) {
+          dispatch(dispatchError(err.response.data));
+        }
+      });
+  };
+}
