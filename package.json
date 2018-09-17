@@ -17,6 +17,7 @@
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "pg-promise": "^8.4.6",
+    "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",

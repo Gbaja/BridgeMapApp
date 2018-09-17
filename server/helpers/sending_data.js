@@ -1,13 +1,9 @@
-const successData = (res, data) =>
-  res.status(200).send({
-    type: "success",
-    data
+const dataSent = (res, code, data, type) =>
+  res.status(code).send({
+    type,
+    message: data
   });
 
-const wrongInfoData = (res, message) =>
-  res.status(422).send({
-    type: "error",
-    message
-  });
+
   
-module.exports = { successData, wrongInfoData };
+module.exports = dataSent;

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import { AUTH_USER } from "./types";
+import dispatchError from "./add_error";
 
 export const login = data => {
   return dispatch => {
@@ -14,6 +15,9 @@ export const login = data => {
       })
       .catch(err => {
         console.log(err);
+        if(err.response.status === 422){
+          dispatch(dispatchError(err.response.data));
+        }
       });
   };
 };

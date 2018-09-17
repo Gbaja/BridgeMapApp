@@ -1,12 +1,11 @@
 const checkUser = require("../db_queries/check_user");
 const { hashPassword } = require("../helpers/bcrypt");
 const addUser = require("../db_queries/add_user");
-const { successData, wrongInfoData } = require("../helpers/sending_data");
+const dataSent = require("../helpers/sending_data");
 
 exports.post = async (req, res) => {
   try {
     const userExist = await checkUser(req.body.email);
-    console.log("USER EXITS: ", userExist);
     if (!userExist.case) {
       const hashUserPassword = await hashPassword(req.body.password);
       const userData = {
@@ -17,13 +16,13 @@ exports.post = async (req, res) => {
       };
       const userAddedData = await addUser(userData);
   
-      delete userAddedData.password; 
-      return successData(res, userAddedData);
+      delete userAddedData[0].password; 
+      return dataSent(res, 200, userAddedData[0], "success");
     } else {
       const message =
         "An account has been created with this email. Please log in.";
       
-      return wrongInfoData(res, message);
+      return dataSent(res, 422, message, "error");
     }
   } catch (error) {
     console.log(error);

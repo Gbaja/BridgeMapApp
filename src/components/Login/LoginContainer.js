@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import LoginForm from "./Login";
 import { login } from "../../actions/auth_user";
@@ -10,10 +11,10 @@ class LoginContainer extends Component {
     this.props.login(values);
   };
   render() {
-    const { handleSubmit } = this.props;
-
+    const { handleSubmit, alert } = this.props;
     return (
       <div>
+        {alert.type === "error" && <p>{alert.message}</p>}
         <LoginForm
           onSubmit={this.handleFormSubmission}
           handleSubmit={handleSubmit}
@@ -23,9 +24,18 @@ class LoginContainer extends Component {
   }
 }
 
+LoginContainer.propTypes = {
+  handleSubmit: PropTypes.func,
+  alert: PropTypes.object
+};
+
+const mapStateToProps = ({alert}) => ({
+  alert
+})
+
 export default reduxForm({ form: "Login form" })(
   connect(
-    null,
+    mapStateToProps,
     { login }
   )(LoginContainer)
 );

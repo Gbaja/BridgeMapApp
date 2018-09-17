@@ -1,0 +1,21 @@
+import { ADD_ERROR, RESET_ERROR, ADD_SUCCESS } from "../actions/types";
+
+const initialState = {
+    type: "",
+    message: ""
+}
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_ERROR:
+      console.log("ERROR: ", action.payload);
+      return action.payload;
+    case ADD_SUCCESS:
+      return action.payload;
+    case RESET_ERROR:
+      console.log("RESET ERROR REDUCER");
+      return "";
+    default:
+      return state;
+  }
+};
