@@ -7,6 +7,7 @@ import { signup } from "../../actions/auth_user";
 import SignupForm from "./Signup_Form";
 import { checkEmail, checkPassword } from "../../helpers/form_validation";
 import Alert from "../Alert/Alert";
+import { WF, YP } from "../../helpers/user_type";
 
 class SignupContainer extends Component {
   static propTypes = {
@@ -15,8 +16,17 @@ class SignupContainer extends Component {
   };
 
   handleFormSubmission = values => {
-    this.props.signup(values);
+    this.props.signup(values, res => {
+      console.log(res)
+      if (res.message.user_type === WF) {
+        this.props.history.push(`/wf_dashboard`);
+      }
+      if (res.message.user_type === YP) {
+        this.props.history.push(`/yp_dashboard`);
+      }
+    })
   };
+  
   render() {
     const { handleSubmit, alert } = this.props;
     return (
