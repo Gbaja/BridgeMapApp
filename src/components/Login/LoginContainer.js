@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import LoginForm from "./LoginForm";
 import { login } from "../../actions/auth_user";
 import {checkEmail} from "../../helpers/form_validation"
+import Alert from "../Alert/Alert";
 
 class LoginContainer extends Component {
   handleFormSubmission = values => {
@@ -15,7 +16,8 @@ class LoginContainer extends Component {
     const { handleSubmit, alert } = this.props;
     return (
       <div>
-        {alert.type === "error" && <p>{alert.message}</p>}
+        <h3>Login form</h3>
+        <Alert alert={alert} />
         <LoginForm
           onSubmit={this.handleFormSubmission}
           handleSubmit={handleSubmit}
@@ -33,7 +35,7 @@ LoginContainer.propTypes = {
 const validate = values => {
   const errors = {};
 
-  if (!values.email || checkEmail(values.email)) {
+  if (!values.email || !checkEmail(values.email)) {
     errors.email = "Enter a valid email.";
   }
   if (!values.password) {

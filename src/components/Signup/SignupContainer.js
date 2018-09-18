@@ -5,15 +5,18 @@ import { connect } from "react-redux";
 import { signup } from "../../actions/auth_user";
 import SignupForm from "./SignupForm";
 import { checkEmail, checkPassword } from "../../helpers/form_validation";
+import Alert from "../Alert/Alert";
 
 class SignupContainer extends Component {
   handleFormSubmission = values => {
     this.props.signup(values);
   };
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, alert } = this.props;
     return (
       <div>
+        <h3>Signup form</h3>
+        <Alert alert={alert} />
         <SignupForm
           handleSubmit={handleSubmit}
           onSubmit={this.handleFormSubmission}
@@ -26,10 +29,10 @@ class SignupContainer extends Component {
 const validate = values => {
   const errors = {};
 
-  if (!values.email || checkEmail(values.email)) {
+  if (!values.email || !checkEmail(values.email)) {
     errors.email = "Enter a valid email.";
   }
-  if (!values.password || checkPassword(values.password)) {
+  if (!values.password || !checkPassword(values.password)) {
     errors.password = "Please enter a password.";
   }
   if(values.confirm_password !== values.password ){
@@ -45,9 +48,14 @@ const validate = values => {
   return errors;
 };
 
+const mapStateToProps = ({ alert }) => ({
+  alert
+});
+
+
 export default reduxForm({ validate, form: "Signup form" })(
   connect(
-    null,
+    mapStateToProps,
     { signup }
   )(SignupContainer)
 );
