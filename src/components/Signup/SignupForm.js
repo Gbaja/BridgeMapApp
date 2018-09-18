@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Field } from "redux-form";
 
-import { renderFormFields } from "../../helpers/reduxform";
+import { renderFormFields } from "../../helpers/redux_form";
 
 const SignupForm = ({ handleSubmit, onSubmit }) => {
   return (
@@ -22,6 +22,12 @@ const SignupForm = ({ handleSubmit, onSubmit }) => {
         <Field
           label="Password"
           name="password"
+          type="password"
+          component={renderFormFields}
+        />
+        <Field
+          label="Confirm password"
+          name="confirm_password"
           type="password"
           component={renderFormFields}
         />

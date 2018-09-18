@@ -1,7 +1,7 @@
 import React from "react";
 import { Field } from "redux-form";
 
-import { renderFormFields } from "../../helpers/reduxform";
+import { renderFormFields } from "../../helpers/redux_form";
 
 const LoginForm = ({ handleSubmit, onSubmit }) => (
   <form onSubmit={handleSubmit(onSubmit)}>

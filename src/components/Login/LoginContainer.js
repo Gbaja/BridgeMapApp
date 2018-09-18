@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 
 import LoginForm from "./LoginForm";
 import { login } from "../../actions/auth_user";
+import {checkEmail} from "../../helpers/form_validation"
 
 class LoginContainer extends Component {
   handleFormSubmission = values => {
@@ -29,11 +30,24 @@ LoginContainer.propTypes = {
   alert: PropTypes.object
 };
 
-const mapStateToProps = ({alert}) => ({
-  alert
-})
+const validate = values => {
+  const errors = {};
 
-export default reduxForm({ form: "Login form" })(
+  if (!values.email || checkEmail(values.email)) {
+    errors.email = "Enter a valid email.";
+  }
+  if (!values.password) {
+    errors.password = "Please enter a password.";
+  }
+
+  return errors;
+};
+
+const mapStateToProps = ({ alert }) => ({
+  alert
+});
+
+export default reduxForm({ validate, form: "Login form" })(
   connect(
     mapStateToProps,
     { login }
