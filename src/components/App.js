@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import LoginContainer from './Login/LoginContainer';
-import SignupContainer from './Signup/SignupContainer';
+import LoginContainer from './Login/Login_Container';
+import SignupContainer from './Signup/Signup_Container';
 
 class App extends Component {
 

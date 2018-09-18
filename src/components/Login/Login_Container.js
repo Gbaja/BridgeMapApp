@@ -3,12 +3,17 @@ import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import LoginForm from "./LoginForm";
+import LoginForm from "./Login_Form";
 import { login } from "../../actions/auth_user";
 import {checkEmail} from "../../helpers/form_validation"
 import Alert from "../Alert/Alert";
 
 class LoginContainer extends Component {
+  static propTypes = {
+    handleSubmit: PropTypes.func,
+    alert: PropTypes.object
+  };
+
   handleFormSubmission = values => {
     this.props.login(values);
   };
@@ -27,10 +32,6 @@ class LoginContainer extends Component {
   }
 }
 
-LoginContainer.propTypes = {
-  handleSubmit: PropTypes.func,
-  alert: PropTypes.object
-};
 
 const validate = values => {
   const errors = {};

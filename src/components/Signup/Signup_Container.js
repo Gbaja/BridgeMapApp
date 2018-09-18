@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { signup } from "../../actions/auth_user";
-import SignupForm from "./SignupForm";
+import SignupForm from "./Signup_Form";
 import { checkEmail, checkPassword } from "../../helpers/form_validation";
 import Alert from "../Alert/Alert";
 
 class SignupContainer extends Component {
+  static propTypes = {
+    handleSubmit: PropTypes.func,
+    alert: PropTypes.object
+  };
+
   handleFormSubmission = values => {
     this.props.signup(values);
   };
