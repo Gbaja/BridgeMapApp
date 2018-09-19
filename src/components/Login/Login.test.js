@@ -14,3 +14,5 @@ describe("Login form component", () => {
     expect(wrapper.find("form").length).toBe(1);
   });
 });
+
+

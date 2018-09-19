@@ -36,16 +36,12 @@
     "client": "react-scripts start",
     "auto-server": "nodemon index.js",
     "dev": "concurrently \"npm run auto-server\" \"npm run client\" ",
-    "build": "react-scripts build",
-    "test": "NODE_ENV=test react-scripts test --env=jsdom --watch",
+    "build": "NODE_ENV=test react-scripts build",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^4.19.1",
