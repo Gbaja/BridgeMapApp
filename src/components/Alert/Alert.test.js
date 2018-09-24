@@ -26,4 +26,12 @@ describe("App", () => {
     const wrapper = shallow(<Alert alert={alert} />);
     expect(wrapper.find("p").length).toBe(1);
   });
+  test('has a valid snapshot', ()=>{
+    const alert = {
+      type: "unknown"
+    };
+    const component = renderer.create(<Alert alert={alert} />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -16,27 +16,26 @@ class LoginContainer extends Component {
   };
 
   handleFormSubmission = values => {
-    this.props.login(values, res=>{
-      console.log(res)
-      if(res.message.user_type === WF){
+    this.props.login(values, res => {
+      console.log(res);
+      if (res.message.user_type === WF) {
         this.props.history.push(`/wf_dashboard`);
-      } 
-      if(res.message.user_type === YP){
+      }
+      if (res.message.user_type === YP) {
         this.props.history.push(`/yp_dashboard`);
       }
-    })
+    });
   };
-  
+
+  handleSubmit = () => this.props.handleSubmit(this.handleFormSubmission);
+
   render() {
-    const { handleSubmit, alert } = this.props;
+    const { alert } = this.props;
     return (
       <div>
         <h3>Login form</h3>
-        <Alert alert={alert} />
-        <LoginForm
-          onSubmit={this.handleFormSubmission}
-          handleSubmit={handleSubmit}
-        />
+       {alert && <Alert alert={alert} />}
+        <LoginForm onSubmit={this.handleSubmit()} />
       </div>
     );
   }

@@ -22,6 +22,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "redux": "^4.0.0",
@@ -36,8 +37,9 @@
     "client": "react-scripts start",
     "auto-server": "nodemon index.js",
     "dev": "concurrently \"npm run auto-server\" \"npm run client\" ",
-    "build": "NODE_ENV=test react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "node-test": "NODE_ENV=test jest --watch",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },

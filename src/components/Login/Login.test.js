@@ -1,18 +1,45 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
+import {Provider} from "react-redux";
+import { MemoryRouter } from "react-router";
 
 import LoginForm from "./Login_Form";
+import Login_Container from "./Login_Container";
+import { mockStore } from "../../test_support";
 
 describe("Login form component", () => {
-  test("it renders a form with length of 1", () => {
+
+  test("Test onSubmit is been called", () => {
     const onSubmit = jest.fn();
-    const handleSubmit = jest.fn();
     const wrapper = shallow(
-      <LoginForm onSubmit={onSubmit} handleSubmit={handleSubmit} />
+      <LoginForm onSubmit={onSubmit} />
     );
-    console.log("LOGIN FORM WRAPPER: ", wrapper.find("form"));
-    expect(wrapper.find("form").length).toBe(1);
+
+    wrapper.find("form").simulate("submit");
+
+    expect(onSubmit).toHaveBeenCalled();
   });
 });
 
+describe("Login form container component", ()=>{
+  test("With an organizer loggin in, navigates to the organizer dashboard", ()=>{
+    const store = mockStore();
+    const push = jest.fn();
+    const wrapper = mount(
+      <MemoryRouter>
+        <Provider store={store}>
+
+          <Login_Container store={store} />
+        </Provider>
+      </MemoryRouter>
+     
+    );
+    
+    const container = wrapper.find("form");
+
+    console.log(wrapper.html())
+
+    expect(push).toHaveBeenCalledWith(`/wf_dashboard`);
+  })
+})
 

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 import { renderFormFields } from "../../helpers/redux_form";
 
-const LoginForm = ({ handleSubmit, onSubmit }) => (
-  <form onSubmit={handleSubmit(onSubmit)}>
+const LoginForm = ({onSubmit }) => (
+  <form onSubmit={onSubmit}>
     <Field label="Email" name="email" component={renderFormFields} />
     <Field
       label="Password"

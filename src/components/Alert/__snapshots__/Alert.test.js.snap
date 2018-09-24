@@ -7,3 +7,5 @@ exports[`App has a valid snapshot 1`] = `
   </p>
 </div>
 `;
+
+exports[`App has a valid snapshot 2`] = `null`;
