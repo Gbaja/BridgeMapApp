@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "semantic-ui-react";
 
-import "./Home.css";
+import "./Header.css";
 
 const Heading = () => (
   <div className="header">
