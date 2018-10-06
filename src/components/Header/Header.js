@@ -4,11 +4,11 @@ import { Header } from "semantic-ui-react";
 import "./Header.css";
 
 const Heading = () => (
-  <div className="header">
-    <Header as="h1" className="header--title">
+  <div className="heading">
+    <Header as="h1" className="heading--title">
       BridgeMap
     </Header>
-    <p className="header--slogan">Bridging the gap between young people and the wider community.</p>
+    <p className="heading--slogan">Bridging the gap between young people and the wider community.</p>
   </div>
 );
 
