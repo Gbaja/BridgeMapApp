@@ -11,12 +11,13 @@ class NavBar extends Component {
     leftItems: [{ as: "a", content: "BridgeMap", key: "bridge_map" }],
     rightItems: [
       { as: "a", content: "About", key: "about" },
-      { as: "a", content: "Explore", key: "explore" },
-      { as: "a", content: "Contact us", key: "contact_us" },
-      { as: "a", content: "Log in", key: "login" },
-      { as: "a", content: "Sign up", key: "signup" }
+      { as: "a", content: "Explore", key: "explore",   },
+      { as: "a", content: "Contact us", key: "contact_us",   },
+      { as: "a", content: "Log in", key: "login", href: "/login"  },
+      { as: "a", content: "Sign up", key: "signup", href: "/signup"  }
     ]
   };
+
 
   handlePusher = () => {
     const { visible } = this.state;
@@ -44,7 +45,7 @@ class NavBar extends Component {
           </NavBarMobile>
         </Responsive>
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-          <NavBarDesktop leftItems={leftItems} rightItems={rightItems}/>
+          <NavBarDesktop leftItems={leftItems} rightItems={rightItems} />
           <Container style={{ marginTop: '5em' }} fluid>
             <Heading/>
             </Container>

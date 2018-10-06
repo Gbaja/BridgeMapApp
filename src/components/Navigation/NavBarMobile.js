@@ -11,7 +11,6 @@ const NavBarMobile = ({
 }) => (
   <Sidebar.Pushable>
     <Sidebar
-      color="blue"
       as={Menu}
       animation="overlay"
       icon="labeled"
