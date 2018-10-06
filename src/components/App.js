@@ -1,24 +1,26 @@
-import React, { Component } from 'react';
-import { connect } from "react-redux";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import authUser from "../actions/auth_user";
+import YP_Dashboard_Container from "./Dashboard/YP_Dashboard/YP_Dashboard_Container";
+import WF_Dashboard_Container from "./Dashboard/WF_Dashboard/WF_Dashboard_Container";
+import LoginContainer from "./Login/Login_Container";
+import SignupContainer from "./Signup/Signup_Container";
+import Home from "./Home/Home";
 
 class App extends Component {
-  componentDidMount(){
-    this.props.authUser();
-  }
   render() {
-    console.log(this.props.user);
     return (
-      <div className="App">
-       BridgeMap
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/wf_dashboard" component={WF_Dashboard_Container} />
+          <Route exact path="/yp_dashboard" component={YP_Dashboard_Container} />
+          <Route exact path="/login" component={LoginContainer} />
+          <Route exact path="/signup" component={SignupContainer} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </Router>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.authUser.user,
-});
-
-export default connect(mapStateToProps, {authUser})(App);
+export default App;
