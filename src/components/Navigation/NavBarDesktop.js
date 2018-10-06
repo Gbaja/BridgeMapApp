@@ -7,11 +7,11 @@ const NavBarDesktop = ({ leftItems, rightItems }) => (
       <Image size="mini" src="https://react.semantic-ui.com/logo.png" />
     </Menu.Item>
     {leftItems.map(item => (
-      <Menu.Item {...item} />
+      <Menu.Item key={item.key} {...item} />
     ))}
     <Menu.Menu position="right">
       {rightItems.map(item => (
-        <Menu.Item {...item} />
+        <Menu.Item key={item.key} {...item} />
       ))}
     </Menu.Menu>
   </Menu>

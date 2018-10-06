@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Responsive, Container, Header } from 'semantic-ui-react';
 import NavBarMobile from './NavBarMobile';
 import NavBarDesktop from './NavBarDesktop';
-import Heading from '../Home/Header';
+import NavBarChildren from './NavBarChildren';
 
 class NavBar extends Component {
   state = {
@@ -29,8 +29,9 @@ class NavBar extends Component {
 
   render() {
     const { leftItems, rightItems, visible } = this.state;
+    const {children} = this.props;
     return (
-      <div>
+      <Fragment>
         <Responsive maxWidth= {Responsive.onlyMobile.maxWidth}>
           <NavBarMobile
             leftItems={leftItems}
@@ -39,18 +40,14 @@ class NavBar extends Component {
             onPusherClick={this.handlePusher}
             onToggle={this.handleToggle}
           >
-         <Container style={{marginTop: '5em'}} fluid>
-          <Heading/>
-          </Container>
+          <NavBarChildren>{children}</NavBarChildren>
           </NavBarMobile>
         </Responsive>
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
           <NavBarDesktop leftItems={leftItems} rightItems={rightItems} />
-          <Container style={{ marginTop: '5em' }} fluid>
-            <Heading/>
-            </Container>
+         <NavBarChildren>{children}</NavBarChildren>
         </Responsive>
-      </div>
+      </Fragment>
     );
   }
 }

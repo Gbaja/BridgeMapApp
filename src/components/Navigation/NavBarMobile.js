@@ -3,7 +3,6 @@ import {Menu, Image, Sidebar, Icon} from "semantic-ui-react";
 
 const NavBarMobile = ({
   children,
-  leftItems,
   onPusherClick,
   onToggle,
   rightItems,
@@ -28,7 +27,7 @@ const NavBarMobile = ({
         <Menu.Item>
           <Image size="mini" src="https://react.semantic-ui.com/logo.png" />
         </Menu.Item>
-          <Menu.Item>
+        <Menu.Item>
             BridgeMap
           </Menu.Item>
         <Menu.Item onClick={onToggle} position="right">
