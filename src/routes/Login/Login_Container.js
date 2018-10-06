@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import LoginForm from "./Login_Form";
-import { login } from "../../actions/auth_user";
+import { login } from "../../redux/actions/auth_user";
 import {checkEmail} from "../../helpers/form_validation"
 import Alert from "../../components/Alert/Alert";
 import {WF, YP} from "../../helpers/user_type";
