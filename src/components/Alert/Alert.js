@@ -3,7 +3,7 @@ import React from "react";
 import {ERROR_ALERT} from "../../helpers/user_type";
 
 function Alert({ alert: {message, type} }) { 
-  return type == ERROR_ALERT && <div><p>{message}</p></div>;
+  return type === ERROR_ALERT && <div><p>{message}</p></div>;
 }
 
 export default Alert;
