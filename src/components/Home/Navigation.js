@@ -11,7 +11,7 @@ export default class Navigation extends Component {
           <Menu.Item name="About" />
           <Menu.Item name="Explore" />
           <Menu.Item name="Contact us" />
-                <Menu.Item link><Link to="/signup">Log in</Link></Menu.Item>
+          <Menu.Item link><Link to="/signup">Log in</Link></Menu.Item>
           <Menu.Item link><Link to="/login">Sign up</Link></Menu.Item>
         </Menu.Menu>
       </Menu>
