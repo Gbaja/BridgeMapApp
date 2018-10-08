@@ -16,11 +16,9 @@ describe("Alert component", () => {
     );
   });
 
-
-  //WHY DOES IT RENDERS FAIL
-  // it('renders', () => {
-  //   expect(wrapper).toExist();
-  // });
+  it('renders', () => {
+    expect(wrapper).toBeDefined();
+  });
 
   it("renders a paragraph when there is an error", () => {
     expect(wrapper.find("Message").length).toBe(1);
