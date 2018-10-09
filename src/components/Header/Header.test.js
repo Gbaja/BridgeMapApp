@@ -16,10 +16,4 @@ describe("Header component", () => {
   it('renders', () => {
     expect(wrapper).toBeDefined();
   });
-
-  it("contains header", ()=>{
-    expect(wrapper.find("Heading").at(0)).toHaveText("BridgeMap");
-  });
-
-
 });

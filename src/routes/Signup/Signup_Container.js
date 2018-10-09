@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -8,6 +8,7 @@ import SignupForm from "./Signup_Form";
 import { checkEmail, checkPassword } from "../../helpers/form_validation";
 import Alert from "../../components/Alert/Alert";
 import { WF, YP } from "../../helpers/user_type";
+import { Header } from "semantic-ui-react";
 
 class SignupContainer extends Component {
   static propTypes = {
@@ -30,14 +31,11 @@ class SignupContainer extends Component {
   render() {
     const { handleSubmit, alert } = this.props;
     return (
-      <div>
-        <h3>Signup form</h3>
-        <Alert alert={alert} />
         <SignupForm
           handleSubmit={handleSubmit}
           onSubmit={this.handleFormSubmission}
+          alert={alert}
         />
-      </div>
     );
   }
 }

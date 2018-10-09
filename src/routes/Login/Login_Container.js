@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -32,11 +32,9 @@ class LoginContainer extends Component {
   render() {
     const { alert } = this.props;
     return (
-      <div>
-        <h3>Login form</h3>
-       {alert && <Alert alert={alert} />}
-        <LoginForm onSubmit={this.handleSubmit()} />
-      </div>
+      <Fragment>
+        <LoginForm onSubmit={this.handleSubmit()} alert/>
+      </Fragment>
     );
   }
 }
