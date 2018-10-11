@@ -7,7 +7,7 @@ import { signup } from "../../redux/actions/auth_user";
 import SignupForm from "./Signup_Form";
 import { checkEmail, checkPassword } from "../../helpers/form_validation";
 import Alert from "../../components/Alert/Alert";
-import { WF, YP } from "../../helpers/user_type";
+import { WF, YP } from "../../helpers/constants";
 import { Header } from "semantic-ui-react";
 
 class SignupContainer extends Component {
