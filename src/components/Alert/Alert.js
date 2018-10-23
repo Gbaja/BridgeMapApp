@@ -1,9 +1,15 @@
 import React from "react";
+import { Message } from "semantic-ui-react";
 
-import {ERROR_ALERT} from "../../helpers/user_type";
+import {ERROR_ALERT} from "../../helpers/constants";
 
 function Alert({ alert: {message, type} }) { 
-  return type == ERROR_ALERT && <div><p>{message}</p></div>;
+  return type === ERROR_ALERT && (
+    <Message negative>
+      <Message.Header>Log in unsuccessful</Message.Header>
+      <p>{message}</p>
+    </Message>
+  );
 }
 
 export default Alert;

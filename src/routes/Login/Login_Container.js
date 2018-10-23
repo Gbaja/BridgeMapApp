@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import LoginForm from "./Login_Form";
-import { login } from "../../actions/auth_user";
+import { login } from "../../redux/actions/auth_user";
 import {checkEmail} from "../../helpers/form_validation"
-import Alert from "../Alert/Alert";
-import {WF, YP} from "../../helpers/user_type";
+import Alert from "../../components/Alert/Alert";
+import {WF, YP} from "../../helpers/constants";
 
 class LoginContainer extends Component {
   static propTypes = {
@@ -32,11 +32,9 @@ class LoginContainer extends Component {
   render() {
     const { alert } = this.props;
     return (
-      <div>
-        <h3>Login form</h3>
-       {alert && <Alert alert={alert} />}
-        <LoginForm onSubmit={this.handleSubmit()} />
-      </div>
+      <Fragment>
+        <LoginForm onSubmit={this.handleSubmit()} alert/>
+      </Fragment>
     );
   }
 }

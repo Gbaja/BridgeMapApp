@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { signup } from "../../actions/auth_user";
+import { signup } from "../../redux/actions/auth_user";
 import SignupForm from "./Signup_Form";
 import { checkEmail, checkPassword } from "../../helpers/form_validation";
-import Alert from "../Alert/Alert";
-import { WF, YP } from "../../helpers/user_type";
+import Alert from "../../components/Alert/Alert";
+import { WF, YP } from "../../helpers/constants";
+import { Header } from "semantic-ui-react";
 
 class SignupContainer extends Component {
   static propTypes = {
@@ -30,14 +31,11 @@ class SignupContainer extends Component {
   render() {
     const { handleSubmit, alert } = this.props;
     return (
-      <div>
-        <h3>Signup form</h3>
-        <Alert alert={alert} />
         <SignupForm
           handleSubmit={handleSubmit}
           onSubmit={this.handleFormSubmission}
+          alert={alert}
         />
-      </div>
     );
   }
 }
