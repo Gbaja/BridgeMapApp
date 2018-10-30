@@ -7,7 +7,8 @@
         "starting_date": "2018-10-23",
         "ending_date": "2018-10-26",
         "starting_time": "10:00am",
-        "ending_time": "2:00pm"
+        "ending_time": "2:00pm",
+        "category": "STEM"
     },
     {
         "title": "Free Painting",
@@ -17,7 +18,8 @@
         "starting_date": "2018-11-24",
         "ending_date": "2018-11-24",
         "starting_time": "11:00am",
-        "ending_time": "4:00pm"
+        "ending_time": "4:00pm",
+        "category": "Creative, Art and Fashion"
     },
     {
         "title": "Get Fit - Boxing for Girls",
@@ -27,7 +29,8 @@
         "starting_date": "2018-09-13",
         "ending_date": "2018-09-13",
         "starting_time": "12:00pm",
-        "ending_time": "2:00pm"
+        "ending_time": "2:00pm",
+        "category": "Sports, Fitness & Wellbeing"
     },
     {
         "title": "Careers in Finance",
@@ -37,7 +40,8 @@
         "starting_date": "2019-11-13",
         "ending_date": "2019-11-13",
         "starting_time": "10:00am",
-        "ending_time": "4:00pm"
+        "ending_time": "4:00pm",
+        "category": "Career Development"
     },
     {
         "title": "Get into Teaching",
@@ -47,7 +51,8 @@
         "starting_date": "2018-11-20",
         "ending_date": "2018-11-23",
         "starting_time": "11:00am",
-        "ending_time": "4:00pm"
+        "ending_time": "4:00pm",
+        "category": "Career Development"
     },
     {
         "title": "Music Production",
@@ -57,7 +62,8 @@
         "starting_date": "2018-10-23",
         "ending_date": "2018-10-26",
         "starting_time": "10:00am",
-        "ending_time": "5:00pm"
+        "ending_time": "5:00pm",
+        "category": "Digital Media and Photography"
     },
     {
         "title": "Cake Baking and Decorating",
@@ -67,7 +73,8 @@
         "starting_date": "2018-10-25",
         "ending_date": "2018-10-26",
         "starting_time": "9:00am",
-        "ending_time": "3:00pm"
+        "ending_time": "3:00pm",
+        "category": "Skills for Life"
     },
     {
         "title": "Get Employed - CV writing workshop",
@@ -77,7 +84,8 @@
         "starting_date": "2018-12-25",
         "ending_date": "2018-12-25",
         "starting_time": "1:00pm",
-        "ending_time": "5:00pm"
+        "ending_time": "5:00pm",
+        "category": "Career Development"
     },
     {
         "title": "Creative writing",
@@ -87,7 +95,8 @@
         "starting_date": "2019-01-03",
         "ending_date": "2019-01-05",
         "starting_time": "10:30am",
-        "ending_time": "2:00pm"
+        "ending_time": "2:00pm",
+        "category": "Creative Art and Fashion"
     },
     {
         "title": "Film making",
@@ -97,6 +106,18 @@
         "starting_date": "2019-02-11",
         "ending_date": "2019-02-15",
         "starting_time": "11:30am",
-        "ending_time": "5:00pm"
+        "ending_time": "5:00pm",
+        "category": "Digital Media and Photography"
+    },
+    {
+        "title": "Level 3 First Aid",
+        "description": "This 3 day first aid course is a Level 3 RQF Award and recommended by the Health and Safety Executive (HSE). Upon completion, this makes you a fully qualified first aider with the skills to deal with any situation.",
+        "starting_age": 16,
+        "ending_age": 21,
+        "starting_date": "2018-12-11",
+        "ending_date": "2018-12-15",
+        "starting_time": "8:30am",
+        "ending_time": "4:00pm",
+        "category": "Accreditation"
     }
 ]

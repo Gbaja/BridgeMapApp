@@ -11,7 +11,7 @@ class NavBar extends Component {
     leftItems: [{ as: "a", content: "BridgeMap", key: "bridge_map" }],
     rightItems: [
       { as: "a", content: "About", key: "about" },
-      { as: "a", content: "Explore", key: "explore",   },
+      { as: "a", content: "Workshops", key: "workshops", href: "/workshops"  },
       { as: "a", content: "Contact us", key: "contact_us",   },
       { as: "a", content: "Log in", key: "login", href: "/login"  },
       { as: "a", content: "Sign up", key: "signup", href: "/signup"  }
