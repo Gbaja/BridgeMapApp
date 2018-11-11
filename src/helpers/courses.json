@@ -1,0 +1,123 @@
+[
+    {
+        "title": "Introduction to Coding",
+        "description": "Learn the fundamentals of coding in this amazing workshop",
+        "starting_age": 13,
+        "ending_age": 19,
+        "starting_date": "2018-10-23",
+        "ending_date": "2018-10-26",
+        "starting_time": "10:00am",
+        "ending_time": "2:00pm",
+        "category": "STEM"
+    },
+    {
+        "title": "Free Painting",
+        "description": "Have fun making your own painting! You will get to choose from different designs, sketches and resources to help you decide.",
+        "starting_age": 10,
+        "ending_age": 13,
+        "starting_date": "2018-11-24",
+        "ending_date": "2018-11-24",
+        "starting_time": "11:00am",
+        "ending_time": "4:00pm",
+        "category": "Creative, Art and Fashion"
+    },
+    {
+        "title": "Get Fit - Boxing for Girls",
+        "description": "During this 2-hour interactive workshop, you’ll develop new fighting skills and get personal feedback on your boxing technique.",
+        "starting_age": 16,
+        "ending_age": 21,
+        "starting_date": "2018-09-13",
+        "ending_date": "2018-09-13",
+        "starting_time": "12:00pm",
+        "ending_time": "2:00pm",
+        "category": "Sports, Fitness & Wellbeing"
+    },
+    {
+        "title": "Careers in Finance",
+        "description": "Learn more about the different careers available in the finance world by hearing from people in the industry.",
+        "starting_age": 18,
+        "ending_age": 21,
+        "starting_date": "2019-11-13",
+        "ending_date": "2019-11-13",
+        "starting_time": "10:00am",
+        "ending_time": "4:00pm",
+        "category": "Career Development"
+    },
+    {
+        "title": "Get into Teaching",
+        "description": "If you want to get into teaching, we can help. Get information on training courses, funding, pay scales and tips on how to make a great application.",
+        "starting_age": 18,
+        "ending_age": 21,
+        "starting_date": "2018-11-20",
+        "ending_date": "2018-11-23",
+        "starting_time": "11:00am",
+        "ending_time": "4:00pm",
+        "category": "Career Development"
+    },
+    {
+        "title": "Music Production",
+        "description": "Our music production courses will be taught using Ableton Live, Logic Pro X, Native Instruments and Pro Tools with students learning all aspects of music production including mixing, mastering, sound design and more.",
+        "starting_age": 13,
+        "ending_age": 19,
+        "starting_date": "2018-10-23",
+        "ending_date": "2018-10-26",
+        "starting_time": "10:00am",
+        "ending_time": "5:00pm",
+        "category": "Digital Media and Photography"
+    },
+    {
+        "title": "Cake Baking and Decorating",
+        "description": "Inspired by the Great British Bake-off? Find your inner Mary Berry on our short cake decorating or baking courses.",
+        "starting_age": 13,
+        "ending_age": 18,
+        "starting_date": "2018-10-25",
+        "ending_date": "2018-10-26",
+        "starting_time": "9:00am",
+        "ending_time": "3:00pm",
+        "category": "Skills for Life"
+    },
+    {
+        "title": "Get Employed - CV writing workshop",
+        "description": "Looking for a job? We can help. Join us in our one day course to find out how you can writing a winning CV",
+        "starting_age": 16,
+        "ending_age": 21,
+        "starting_date": "2018-12-25",
+        "ending_date": "2018-12-25",
+        "starting_time": "1:00pm",
+        "ending_time": "5:00pm",
+        "category": "Career Development"
+    },
+    {
+        "title": "Creative writing",
+        "description": "Tell the story you want to tell in an engaging and informative way, we can teach you.",
+        "starting_age": 14,
+        "ending_age": 19,
+        "starting_date": "2019-01-03",
+        "ending_date": "2019-01-05",
+        "starting_time": "10:30am",
+        "ending_time": "2:00pm",
+        "category": "Creative Art and Fashion"
+    },
+    {
+        "title": "Film making",
+        "description": "Covering all the basics you need to get started: from setting up a camera, to developing a narrative, lighting scenes, recording audio and editing, our film course will encourage you to explore both the creative and technical elements of making your own films.",
+        "starting_age": 18,
+        "ending_age": 21,
+        "starting_date": "2019-02-11",
+        "ending_date": "2019-02-15",
+        "starting_time": "11:30am",
+        "ending_time": "5:00pm",
+        "category": "Digital Media and Photography"
+    },
+    {
+        "title": "Level 3 First Aid",
+        "description": "This 3 day first aid course is a Level 3 RQF Award and recommended by the Health and Safety Executive (HSE). Upon completion, this makes you a fully qualified first aider with the skills to deal with any situation.",
+        "starting_age": 16,
+        "ending_age": 21,
+        "starting_date": "2018-12-11",
+        "ending_date": "2018-12-15",
+        "starting_time": "8:30am",
+        "ending_time": "4:00pm",
+        "category": "Accreditation"
+    }
+]
