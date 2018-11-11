@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Responsive, Container, Header } from 'semantic-ui-react';
+import { Responsive } from 'semantic-ui-react';
 import NavBarMobile from './NavBarMobile';
 import NavBarDesktop from './NavBarDesktop';
 import NavBarChildren from './NavBarChildren';

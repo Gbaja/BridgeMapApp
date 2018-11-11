@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Button, Icon, Image, Item, Label, Container } from "semantic-ui-react";
+import { Button, Icon, Item, Label, Container } from "semantic-ui-react";
 
 import CoursesData from "../../helpers/courses.json";
 import PlaceHolderImg from "../../Assets/placeholder.png";

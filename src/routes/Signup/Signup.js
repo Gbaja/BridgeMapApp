@@ -1,14 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { signup } from "../../redux/actions/auth_user";
-import SignupForm from "./Signup_Form";
+import SignupForm from "../../components/SignupForm/SignupForm";
 import { checkEmail, checkPassword } from "../../helpers/form_validation";
-import Alert from "../../components/Alert/Alert";
 import { WF, YP } from "../../helpers/constants";
-import { Header } from "semantic-ui-react";
 
 class SignupContainer extends Component {
   static propTypes = {
@@ -47,7 +45,7 @@ const validate = values => {
     errors.email = "Enter a valid email.";
   }
   if (!values.password || !checkPassword(values.password)) {
-    errors.password = "Please enter a password.";
+    errors.password = "Passwords must have one capital letter, one number, one special case letter(!@#$&*.) and must be a minimum of 6 characters.";
   }
   if(values.confirm_password !== values.password ){
     errors.confirm_password = "Please make sure your password match."

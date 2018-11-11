@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { Header } from "semantic-ui-react";
 
 import { renderFormFields } from "../../helpers/redux_form";
-import Alert from "../../components/Alert/Alert";
-import NavBar from "../../components/Navigation/NavBar";
+import Alert from "../Alert/Alert";
+import NavBar from "../Navigation/NavBar";
 
 const SignupForm = ({ handleSubmit, onSubmit, alert }) => {
   return (

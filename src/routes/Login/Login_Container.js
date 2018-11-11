@@ -3,10 +3,9 @@ import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import LoginForm from "./Login_Form";
+import LoginForm from "../../components/LoginForm/Login_Form";
 import { login } from "../../redux/actions/auth_user";
 import {checkEmail} from "../../helpers/form_validation"
-import Alert from "../../components/Alert/Alert";
 import {WF, YP} from "../../helpers/constants";
 
 class LoginContainer extends Component {
@@ -33,7 +32,7 @@ class LoginContainer extends Component {
     const { alert } = this.props;
     return (
       <Fragment>
-        <LoginForm onSubmit={this.handleSubmit()} alert/>
+        <LoginForm onSubmit={this.handleSubmit()} alert={alert}/>
       </Fragment>
     );
   }
