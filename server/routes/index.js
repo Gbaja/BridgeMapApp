@@ -5,6 +5,7 @@ const router = express.Router();
 
 const signup = require("./signup");
 const login = require("./login");
+const allWorkshops = require("./all_workshops");
 
 router.get("/api/hello", (req, res)=>{
   res.send("Hello");
@@ -16,5 +17,7 @@ router.post(
   [check("email", "Invalid email").isEmail(), check("password","Password must be 8 characters long.").isLength({ min: 8 })],
   login.post
 );
+
+router.get("/api/all_workshops", allWorkshops.get);
 
 module.exports = router;
