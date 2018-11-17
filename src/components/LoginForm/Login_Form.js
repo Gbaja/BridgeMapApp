@@ -8,6 +8,11 @@ import { renderFormFields } from "../../helpers/redux_form";
 import NavBar from "../Navigation/NavBar";
 import Alert from "../Alert/Alert";
 
+const propTypes = {
+  alert: PropTypes.object,
+  handleSubmit: PropTypes.func
+};
+
 const LoginForm = ({alert, onSubmit }) => (
   <NavBar>
     <Form onSubmit={onSubmit}>
@@ -26,9 +31,6 @@ const LoginForm = ({alert, onSubmit }) => (
   </NavBar>
 );
 
-LoginForm.propTypes = {
-  handleSubmit: PropTypes.func,
-  onSubmit: PropTypes.func
-};
+LoginForm.propTypes = propTypes;
 
 export default LoginForm;
