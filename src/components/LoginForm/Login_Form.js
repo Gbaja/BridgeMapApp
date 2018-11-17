@@ -5,8 +5,13 @@ import { Link } from "react-router-dom";
 import { Header, Form } from "semantic-ui-react";
 
 import { renderFormFields } from "../../helpers/redux_form";
-import NavBar from "../../components/Navigation/NavBar";
-import Alert from "../../components/Alert/Alert";
+import NavBar from "../Navigation/NavBar";
+import Alert from "../Alert/Alert";
+
+const propTypes = {
+  alert: PropTypes.object,
+  handleSubmit: PropTypes.func
+};
 
 const LoginForm = ({alert, onSubmit }) => (
   <NavBar>
@@ -26,9 +31,6 @@ const LoginForm = ({alert, onSubmit }) => (
   </NavBar>
 );
 
-LoginForm.propTypes = {
-  handleSubmit: PropTypes.func,
-  onSubmit: PropTypes.func
-};
+LoginForm.propTypes = propTypes;
 
 export default LoginForm;

@@ -1,5 +1,4 @@
 const express = require("express");
-const { check } = require("express-validator/check");
 
 const router = express.Router();
 
@@ -12,11 +11,7 @@ router.get("/api/hello", (req, res)=>{
 });
 
 router.post("/api/signup",  signup.post);
-router.post(
-  "/api/login",
-  [check("email", "Invalid email").isEmail(), check("password","Password must be 8 characters long.").isLength({ min: 8 })],
-  login.post
-);
+router.post("/api/login",login.post);
 
 router.get("/api/all_workshops", allWorkshops.get);
 
